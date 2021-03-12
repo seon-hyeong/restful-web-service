@@ -61,9 +61,9 @@ public class UserDaoService {
 		while(iterator.hasNext()) {
 			User user = iterator.next();
 			
-			if(user.getId() != null) {
+			if(user.getId() == id) {
 				user.setName(setUser.getName());
-			
+				user.setJoinDate(setUser.getJoinDate());
 				return user;
 			}
 		}
