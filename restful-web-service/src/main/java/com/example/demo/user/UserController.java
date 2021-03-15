@@ -1,9 +1,10 @@
 package com.example.demo.user;
 
 import java.net.URI;
-import java.util.Date;
+
 import java.util.List;
-import java.util.Optional;
+
+import javax.validation.Valid;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -42,7 +43,7 @@ public class UserController {
 	 
 	// 사용자 생성
 	@PostMapping(path = "/users")
-	public ResponseEntity<User> createUser(@RequestBody User user){
+	public ResponseEntity<User> createUser(@Valid @RequestBody User user){
 		User savedUser = service.save(user);
 		
 		// HTTP Status Code 제어
