@@ -11,10 +11,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
 //@JsonIgnoreProperties(value= {"password"})
+@NoArgsConstructor //defaul 생성자
 @JsonFilter("UserInfo")
 public class User {
 	private Integer id;
