@@ -6,16 +6,23 @@ logging:
     org.springframework: DEBUG
 
 spring:
+  jpa:
+    show-sql: true
   messages: 
     basename: messages
   security:
     user:
       name: username
       password: passw0rd
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  datasource:
+    url: jdbc:h2:mem:testdb
     
 management:
   endpoints:
     web:
       exposure:
         include: "*"
-        
